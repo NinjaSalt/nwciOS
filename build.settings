@@ -1,0 +1,26 @@
+settings = {
+	
+	orientation = {
+		default = "landscapeLeft",
+		supported =
+		{
+			"landscapeLeft"
+		},
+	},	
+
+
+   iphone =
+    {
+        plist =
+        {
+            UIAppFonts =
+            {
+				"LobsterTwo-Regular.ttf",
+				"Imprima-Regular.ttf",
+				"JosefinSans-Regular.ttf"
+            },
+            UIApplicationExitsOnSuspend = true
+        },
+    },
+	
+}
