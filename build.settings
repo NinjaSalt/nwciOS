@@ -23,4 +23,14 @@ settings = {
         },
     },
 	
+	plugins =
+   {
+      --key is the name passed to Lua's 'require()'
+      ["CoronaProvider.native.popup.social"] =
+      {
+      --required
+      publisherId = "com.coronalabs",
+      },
+   },
+	
 }
