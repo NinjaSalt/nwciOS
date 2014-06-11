@@ -4,9 +4,9 @@ local sfx = {}
 -- LOADING SOUND EFFECTS --
 
 --CHANGE COMMENTS TO CHOOSE FILE TYPE
-local fileType = ".ogg"
+--local fileType = ".ogg"
 --local fileType = ".wav"
---local fileType = ".aac"
+local fileType = ".aac"
 
 --CHANGE COMMENTS TO CHOOSE AUDIO DIRECTORY
 local directory = "audio/"
