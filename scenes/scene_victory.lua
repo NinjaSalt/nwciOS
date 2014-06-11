@@ -256,8 +256,9 @@ function scene:createScene( event )
   end
   
   local socialOptions = {
-   service = "twitter",
-   message = "I just scored " .. globals.score .. " points on level " .. nextWorld .. "-" .. nextLevel .. " in Now We're Cooking"
+   service = "facebook",
+   message = "I just scored " .. globals.score .. " points on level " .. nextWorld .. "-" .. nextLevel .. " in Now We're Cooking",
+   listener = socialEventListener,
    url = "http://nwcgame.com"
 }
   

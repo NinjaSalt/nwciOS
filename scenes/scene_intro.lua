@@ -166,8 +166,7 @@ function scene:createScene( event )
   end
 
 
-   -- checks for and prints a second condition
-   local function makeSecCond()
+    local function makeSecCond()
     if (vicCond ~= false) then
     -- print second condition here.
     local secObj = display.newText("Serve " .. vicCond.amount .. " " .. vicCond.enemy.name.. ".", 400, spacer, globals.IMPRIMA, textSize )
@@ -177,6 +176,26 @@ function scene:createScene( event )
     if (vicCond.amount ~= 1) then
       if (vicCond.enemy.name == "Fries") then
       -- do nothing
+      elseif (vicCond.enemy.name == "Steak and Fries") then
+      -- also do nothing
+      elseif (vicCond.enemy.name == "Strawberry Candy") then
+       secObj:removeSelf()
+       secObj = display.newText("Serve " .. vicCond.amount .. " Strawberry Candies.", 400, spacer, globals.IMPRIMA, textSize )
+       secObj: setFillColor(black)
+       group: insert(secObj)
+       transition.to(secObj, {time=150, x=display.contentWidth/2+ moveText})
+      elseif (vicCond.enemy.name == "Lemon Candy") then
+       secObj:removeSelf()
+       secObj = display.newText("Serve " .. vicCond.amount .. " Lemon Candies.", 400, spacer, globals.IMPRIMA, textSize )
+       secObj: setFillColor(black)
+       group: insert(secObj)
+       transition.to(secObj, {time=150, x=display.contentWidth/2+ moveText})
+       elseif (vicCond.enemy.name == "Steak and Potato") or (vicCond.enemy.name == "Mashed Potato") or (vicCond.enemy.name == "Scrambled Eggs & Potato") then
+       secObj:removeSelf()
+       secObj = display.newText("Serve " .. vicCond.amount .. " " .. vicCond.enemy.name .. "es.", 400, spacer, globals.IMPRIMA, textSize )
+       secObj: setFillColor(black)
+       group: insert(secObj)
+       transition.to(secObj, {time=150, x=display.contentWidth/2+ moveText})
     else
       secObj:removeSelf()
       secObj = display.newText("Serve " .. vicCond.amount .. " " .. vicCond.enemy.name .. "s.", 400, spacer, globals.IMPRIMA, textSize )

@@ -72,7 +72,7 @@ function scene:createScene( event )
   levelBack.y = display.contentHeight/2 + 60
   group:insert(levelBack)
 
-   local levelStart = display.newImageRect( "images/startButton.png", 40, 40 )
+   local levelStart = display.newImageRect( "images/buttonPlay.png", 40, 40 )
   levelStart.x = display.contentWidth/2+levelBack.width/2 - 30
   levelStart.y = display.contentHeight-25
   group:insert(levelStart)
@@ -200,12 +200,6 @@ function scene:createScene( event )
       group:insert(levelStars_3[i])
     end
   end
-
-    local levelStart = display.newImageRect( "images/startButton.png", 40, 40 )
-  levelStart.x = display.contentWidth/2+levelBack.width/2 - 30
-  levelStart.y = display.contentHeight-25
-  group:insert(levelStart)
-
 
   local levelTitleText = {
     text = "Step 1: Can you... Cook?",     
@@ -443,9 +437,16 @@ function scene:createScene( event )
     local function onTapStar2 ( event )
         selectedLevel = Level.load(2, levelSelect)
         if (selectedLevel.victoryCondition ~= false) then
-          if (selectedLevel.victoryCondition.memAmount ~= 1) then
-            if (selectedLevel.victoryCondition.enemy == mashed) then
+           if (selectedLevel.victoryCondition.memAmount ~= 1) then
+            if (selectedLevel.victoryCondition.enemy.name == "Mashed Potato") or (selectedLevel.victoryCondition.enemy.name == "Steak and Potato") or (selectedLevel.victoryCondition.enemy.name == "Scrambled Eggs & Potato") then
+              --for purals with an 'es'
               objectives.text = "Serve " ..selectedLevel.victoryCondition.memAmount .." " ..selectedLevel.victoryCondition.enemy.name .. "es"
+            elseif (selectedLevel.victoryCondition.enemy.name == "Fries") or (selectedLevel.victoryCondition.enemy.name == "Steak and Fries") then
+              objectives.text = "Serve " ..selectedLevel.victoryCondition.memAmount .." " ..selectedLevel.victoryCondition.enemy.name
+            elseif (selectedLevel.victoryCondition.enemy.name == "Strawberry Candy") then
+             objectives.text = "Serve " ..selectedLevel.victoryCondition.memAmount .." Strawberry Candies"
+            elseif (selectedLevel.victoryCondition.enemy.name == "Lemon Candy") then
+              objectives.text = "Serve " ..selectedLevel.victoryCondition.memAmount .." Lemon Candies"
             else 
               objectives.text = "Serve " ..selectedLevel.victoryCondition.memAmount .." " ..selectedLevel.victoryCondition.enemy.name .. "s"
             end
